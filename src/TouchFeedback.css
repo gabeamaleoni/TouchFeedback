@@ -1,0 +1,30 @@
+.touch-feedback {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: rgba(92, 203, 255, 0.384);
+  border: 1px solid rgb(8, 110, 136);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  position: absolute;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .touch-feedback.is-active {
+    animation-name: ripple;
+  }
+}
+
+.touch-feedback.is-ending {
+  transform: scale(1.2);
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
